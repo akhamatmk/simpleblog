@@ -21,9 +21,11 @@ Route::get('comment/ajax_category_footer')->uses('PostController@ajax_footer_cat
 Route::post('ajax/login')->uses('Auth\LoginController@ajax_login')->name('ajax_login');
 
 
-Route::get('detail/post/{alias}')->uses('PostController@detail_post')->name('home');
+Route::get('detail/post/{alias}')->uses('PostController@detail_post');
 
-Route::get('tag/{alias}')->uses('PostController@tag')->name('home');
+Route::get('category/{category}')->uses('PostController@list_category');
+
+Route::get('tag/{alias}')->uses('PostController@tag');
 
 Route::post('comment/ajax_store/{post_id}')->uses('PostController@comment_ajax_store');
 

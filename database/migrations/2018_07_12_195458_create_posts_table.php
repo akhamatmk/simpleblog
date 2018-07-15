@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->integer('category_id')->length(5)->unsigned();
             $table->string('title');
-            $table->string('short_description');
+            $table->text('short_description');
             $table->text('long_description');
             $table->integer('like')->default(0);
             $table->integer('view')->default(0);

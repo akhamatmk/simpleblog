@@ -23,9 +23,17 @@
 								<th>Title</th>
 								<th>Short Description</th>
 								<th>View</th>
-								<th>Comment</th>
-								<th>Action</th>
 							</tr>
+                            @if(isset($post))
+                                @foreach($post as $key => $value)
+                                    <tr>
+                                        <td>{{ $key+1 }}</td>
+                                        <td>{{ $value->title }}</td>
+                                        <td>{{ $value->short_description }}</td>
+                                        <td>{{ $value->view }}</td>
+                                    </tr>
+                                @endForeach
+                            @endIf
 						</table>
 					</div><!-- comment-form -->
                 </div>

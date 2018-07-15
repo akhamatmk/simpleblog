@@ -22,7 +22,8 @@ class PostTransformer extends TransformerAbstract
             'long_description'	=> $post->long_description,
             'like'				=> (int) $post->like,
             'view'              => (int) $post->view,
-            'tags'				=> $post->tags,
+            'tags'              => $post->tags,
+            'created_at'		=> $post->created_at,
             'count_comment'     => (int) count($post->comment)
         ];
 

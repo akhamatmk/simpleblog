@@ -100,5 +100,7 @@ class PostController extends Controller
             $postTag->tag_id = $tag->id;
             $postTag->save();
         }
+
+        return redirect('admin');
     }
 }

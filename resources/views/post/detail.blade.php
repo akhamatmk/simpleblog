@@ -37,7 +37,7 @@
 
                                 <div class="middle-area">
                                     <a class="name" href=""><b>{{ $post['createdby']['name'] }}</b></a>
-                                    <h6 class="date">on  Sep 29, 2017 at 9:48 am</h6>
+                                    <h6 class="date">{{date('M d, Y H:i' , strtotime($post['created_at'] )) }}</h6>
                                 </div>
 
                             </div><!-- post-info -->

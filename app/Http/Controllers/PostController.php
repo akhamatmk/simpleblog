@@ -51,6 +51,28 @@ class PostController extends Controller
         return response()->json($data);
     }
 
+    public function list_category($category ,Request $request)
+    {
+        $category = Categorie::where('name', strtolower($category))->first();
+        $result = [];
+        if($category)
+        {
+            $post = Post::where('category_id', $category->id)->get();
+            if(isset($post))
+            {
+                $manager = new Manager();
+                $manager->parseIncludes(['createdby', 'post_tags']);
+                $manager->setSerializer(new CostumeDataArraySerializer());
+                $resource = new Collection($post, new PostTransformer());
+                $result =  $manager->createData($resource)->toArray();
+
+            } else 
+                $result = [];
+        }
+
+        return view('post/category', ['post' => $result]);
+    }
+
     public function ajax_footer_category(Request $request)
     {
         $Categorie = Categorie::get();

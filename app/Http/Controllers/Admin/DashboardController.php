@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Post;
 
 class DashboardController extends Controller
 {
@@ -32,6 +33,8 @@ class DashboardController extends Controller
 
     public function index(Request $request)
     {
-        return view('admin/dashboard');
+        $post = Post::select('posts.*')->where('created_by', Auth::user()->id)->get();
+
+        return view('admin/dashboard', ['post' => $post]);
     }
 }
