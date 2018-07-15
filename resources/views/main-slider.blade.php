@@ -4,7 +4,7 @@
                 <div class="swiper-wrapper">
                     @foreach($category as $key => $value)
                         <div class="swiper-slide">
-                            <a class="slider-category" href="#">
+                            <a class="slider-category" href="{{ url('category/'.strtolower($value->name))}}">
                                 <div class="blog-image"><img src="{{ $value->image }}" alt="Blog Image"></div>
 
                                 <div class="category">

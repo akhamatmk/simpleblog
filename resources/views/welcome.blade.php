@@ -22,7 +22,7 @@
 
                                     <div class="blog-info">
 
-                                        <h6 class="pre-title"><a href="#"><b>{{ $value['category']->name }}</b></a></h6>
+                                        <h6 class="pre-title"><a href="{{ url('category/'.strtolower($value['category']->name)) }}"><b>{{ $value['category']->name }}</b></a></h6>
 
                                         <h4 class="title"><a href="{{ url('detail/post/'.$value['alias']) }}"><b>{{ $value['title'] }}</b></a></h4>
 
@@ -32,7 +32,7 @@
                                             <a class="avatar" href="#"><img src="{{ $value['createdby']['image'] }}" alt="Profile Image"></a>
                                             <div class="right-area">
                                                 <a class="name" href="#"><b>{{ $value['createdby']['name'] }}</b></a>
-                                                <h6 class="date" href="#">on Sep 29, 2017 at 9:48am</h6>
+                                                <h6 class="date">{{date('M d, Y H:i' , strtotime($value['created_at'] )) }}</h6>
                                             </div>
                                         </div>
 
