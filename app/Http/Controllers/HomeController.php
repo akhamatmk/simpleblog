@@ -16,7 +16,7 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-
+        
     	$limit = $request->get('limit') ? $this->get('limit') : 12;
         $post = Post::OrderBy('created_at', 'Desc')->paginate($limit);
         $pagination = new CostumePagination($post);
