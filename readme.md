@@ -15,7 +15,7 @@ application?
 1. kalau di laravel ada method csrf untuk mengamankan form
 2. menggurangi asset yang tidak terpakai , compress gambar agar tidak terlalu besar, menyimpan asset di server yang berbeda di main aplikasi jadi loadnya tidak terasa berat
 3. saya menggunakan bootstrap, jquery,  php , blade laravel dan laravel framwork untuk membuat aplikasi ini
-4  setahu saya best practice untuk membangun atau merancang , software
+4.  setahu saya best practice untuk membangun atau merancang , software
 5. 
 	- Get =   Biasanya untuk mengambil data
 	- Post =   Biasanya untuk Mengirim data
