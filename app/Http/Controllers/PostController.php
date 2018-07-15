@@ -149,7 +149,7 @@ class PostController extends Controller
 	            $resultRandom = [];
 
 
-            $limit = $request->get('limit') ? $this->get('limit') : 1;
+            $limit = $request->get('limit') ? $this->get('limit') : 10;
             $postComment = PostComment::where('post_id', $post->id)->OrderBy('created_at', 'Desc')->paginate($limit);
             $pagination = new CostumePagination($postComment);
             $result_page = $pagination->render();           

@@ -258,12 +258,11 @@
     </div>
 
     @include('footer')
-@endsection
 
-@section('footer-script')
     <script type="text/javascript">
-        $(function() {
-            $("#more").click(function(){
+            ready(function(){
+                $("#more").click(function(){
+
                 var per_page = $("#per_page").val();
                 var next_page = $("#next_page").val();
                 
@@ -337,6 +336,21 @@
                 }else
                     alert('comment cant empty');
             });
+            });
+    </script>
+@endsection
+
+@section('footer-script')
+    <script type="text/javascript">
+        $(function() {
+                
+            
+
+            
         });
     </script>
+@endsection
+
+@section('footer-script')
+
 @endsection

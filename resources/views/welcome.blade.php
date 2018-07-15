@@ -68,12 +68,9 @@
 
     @include('footer')
 
-@endsection
-
-@section('footer-script')
     <script type="text/javascript">
-        $(function() {
-            $("#addMore").click(function(){
+        ready(function(){
+             $("#addMore").click(function(){
                 var per_page = $("#per_page").val();
                 var next_page = $("#next_page").val();
                 
@@ -94,7 +91,16 @@
                             $("#btn-add-more").hide();
                     }
                 });
-            });           
+            });        
+        });
+    </script>
+
+@endsection
+
+@section('footer-script')
+    <script type="text/javascript">
+        $(function() {
+              
         });
     </script>
 @endsection
