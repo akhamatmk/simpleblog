@@ -1,3 +1,4 @@
+<h1>Question</h1>
 1. How to secure form submission?
 2. How would you optimize a website's assets/resources?
 3. What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
@@ -8,6 +9,8 @@
 application?
 
 
+
+<h1>Answer</h1>
 
 1. kalau di laravel ada method csrf untuk mengamankan form
 2. menggurangi asset yang tidak terpakai , compress gambar agar tidak terlalu besar, menyimpan asset di server yang berbeda di main aplikasi jadi loadnya tidak terasa berat
