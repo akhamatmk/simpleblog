@@ -49,9 +49,9 @@
 
                         <div class="post-icons-area">
                             <ul class="post-icons">
-                                <li><a href="#"><i class="ion-heart"></i>57</a></li>
-                                <li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
-                                <li><a href="#"><i class="ion-eye"></i>138</a></li>
+                                <li><a href="#"><i class="ion-heart"></i>{{ $post['like'] }}</a></li>
+                                <li><a href="#"><i class="ion-chatbubble"></i>{{ $post['count_comment'] }}</a></li>
+                                <li><a href="#"><i class="ion-eye"></i>{{ $post['view'] }}</a></li>
                             </ul>
 
                          
@@ -309,25 +309,33 @@
             });
 
             $("#form-submit").click(function(){
-                 $.ajax({
-                    type: "POST",
-                    url: '{{ URL::to("comment/ajax_store/".$post['id']) }} ',
-                    dataType: 'json',
-                    data:{
-                        "_token": "{{ csrf_token() }}",
-                        'comment_text' : $("#comment_text").val()
-                    },
-                    success: function(data){                                       
-                        if(data.code == 401)
-                            $("#myModal").modal('show');
-                        else
-                        {
-                            var a = '<div class="commnets-area"><div class="comment"><div class="post-info"><div class="left-area"><a class="avatar" href=""><img src="'+data.user.image+'" alt="Profile Image"></a></div><div class="middle-area"><a class="name" href="#"><b>'+data.user.name+'</b></a><h6 class="date">on  {{date('M d, Y H:i') }}</h6></div></div><p>'+ $("#comment_text").val() +'</p></div></div>';
 
-                            $('#first_comment').append(a);
+                var comment = $("#comment_text").val();
+
+
+                if(comment.length > 0)
+                {
+                    $.ajax({
+                        type: "POST",
+                        url: '{{ URL::to("comment/ajax_store/".$post['id']) }} ',
+                        dataType: 'json',
+                        data:{
+                            "_token": "{{ csrf_token() }}",
+                            'comment_text' : $("#comment_text").val()
+                        },
+                        success: function(data){                                       
+                            if(data.code == 401)
+                                $("#myModal").modal('show');
+                            else
+                            {
+                                var a = '<div class="commnets-area"><div class="comment"><div class="post-info"><div class="left-area"><a class="avatar" href=""><img src="'+data.user.image+'" alt="Profile Image"></a></div><div class="middle-area"><a class="name" href="#"><b>'+data.user.name+'</b></a><h6 class="date">on  {{date('M d, Y H:i') }}</h6></div></div><p>'+ $("#comment_text").val() +'</p></div></div>';
+
+                                $('#first_comment').append(a);
+                            }
                         }
-                    }
-                });
+                    });
+                }else
+                    alert('comment cant empty');
             });
         });
     </script>
