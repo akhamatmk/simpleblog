@@ -1,11 +1,11 @@
 <h1>Question</h1>
-1. How to secure form submission?
-2. How would you optimize a website's assets/resources?
-3. What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
-4. What do you know about design pattern?
-5. What are HTTP methods? List all HTTP methods that you know, and explain them.
-6. Database: What is the difference between a View and a Table?
-7. What's Two Factor Authentication? How would you implement it in an existing web
+1. How to secure form submission?<br>
+2. How would you optimize a website's assets/resources? <br>
+3. What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site? <br>
+4. What do you know about design pattern? <br>
+5. What are HTTP methods? List all HTTP methods that you know, and explain them. <br>
+6. Database: What is the difference between a View and a Table? <br>
+7. What's Two Factor Authentication? How would you implement it in an existing web <br>
 application?
 
 
