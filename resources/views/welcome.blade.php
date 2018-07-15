@@ -6,7 +6,8 @@
 
     @include('header')
     
-    @include('main-slider')
+    @include('main-slider')    
+    
 
     <section class="blog-area section">
         <div class="container">

@@ -51,6 +51,17 @@ class PostController extends Controller
         return response()->json($data);
     }
 
+    public function ajax_footer_category(Request $request)
+    {
+        $Categorie = Categorie::get();
+
+        $html = "";
+        if(count($Categorie) > 0)
+            $html = view('ajax.category_footer')->with(['category' => $Categorie])->render();
+
+        return response()->json(['content' => $html]);
+    }
+
     public function other_comment($post_id, Request $request)
     {
         $limit = $request->get('limit') ? $request->get('limit') : 10;

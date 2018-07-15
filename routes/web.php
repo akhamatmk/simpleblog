@@ -16,6 +16,7 @@ Route::get('/')->uses('HomeController@index')->name('home');
 Route::get('home')->uses('HomeController@index')->name('home');
 Route::get('ajax/other_post')->uses('PostController@other_post')->name('ajax_other_post');
 Route::get('ajax/other_comment/{post_id}')->uses('PostController@other_comment')->name('ajax_other_post');
+Route::get('comment/ajax_category_footer')->uses('PostController@ajax_footer_category');
 
 Route::post('ajax/login')->uses('Auth\LoginController@ajax_login')->name('ajax_login');
 
@@ -29,12 +30,13 @@ Route::post('comment/ajax_store/{post_id}')->uses('PostController@comment_ajax_s
 
 
 Route::get('login')->uses('Auth\LoginController@index')->name('login');
+Route::get('logout')->uses('Auth\LoginController@logout')->name('logout');
 Route::post('login')->uses('Auth\LoginController@store')->name('login-store');
 Route::get('register/user')->uses('Auth\RegisterController@index')->name('register-user');
 Route::post('register/user')->uses('Auth\RegisterController@store')->name('register-user-save');
 
 
-Route::get('admin/dashboard')->uses('Admin\DashboardController@index')->name('dashboard')->middleware('auth');
+Route::get('admin')->uses('Admin\DashboardController@index')->name('dashboard')->middleware('auth');
 Route::get('admin/post/create')->uses('Admin\PostController@create')->name('admin-post-create')->middleware('auth');
 Route::post('admin/post/create')->uses('Admin\PostController@store')->name('admin-post-store')->middleware('auth');
 

@@ -60,4 +60,10 @@ class LoginController extends Controller
         else
             return response()->json(['code' => 400, 'message' => 'failed login']);
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('home');
+    }
 }

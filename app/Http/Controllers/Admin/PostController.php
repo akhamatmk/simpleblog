@@ -17,7 +17,6 @@ use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
 use App\Transformers\PostTransformer;
-use Auth;
 
 class PostController extends Controller
 {
